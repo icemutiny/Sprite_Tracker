@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Sprites Checklist</title>
+    <style>
+    @import url('https://fonts.cdnfonts.com/css/gemunu-libre');
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Gemunu Libre Medium", Roboto, Helvetica, Arial, sans-serif; font-size: 1.25em;
+            background-color: #f4f4f9;
+            color: #333;
+            max-width: 1050px; 
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #111;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .top-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .sort-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+        }
+        .sort-btn:hover { background-color: #5a6268; }
+        .sort-btn.sort-active { background-color: #17a2b8; }
+        .sort-btn.sort-active:hover { background-color: #138496; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+            font-weight: bold;
+            font-size: 0.95em;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.5), 
+                1px -1px 2px rgba(0,0,0,0.5), 
+                -1px 1px 2px rgba(0,0,0,0.5), 
+                1px 1px 2px rgba(0,0,0,0.5),
+                0 0 4px rgba(0,0,0,0.8);
+        }
+        
+        /* --- DEFAULT PATTERN (Very Dark Grey) --- */
+        th.th-default, .col-default { 
+            background: 
+                linear-gradient(105deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 80%),
+                linear-gradient(135deg, #151515 0%, #222222 40%, #0d0d0d 100%);
+        }
+
+        /* --- GOLD PATTERN (Gold Variant Texture Match) --- */
+        th.th-gold, .col-gold { 
+            position: relative;
+            background: 
+                radial-gradient(ellipse at 50% 30%, rgba(255, 245, 180, 0.9) 0%, rgba(255, 200, 50, 0.6) 40%, rgba(100, 60, 0, 0.8) 100%),
+                linear-gradient(135deg, #3a2200 0%, #8a5a00 30%, #ffdf73 50%, #b87c00 75%, #4a2b00 100%);
+            background-size: 100% 100%, 200% 200%;
+        }
+
+        /* --- GUMMY PATTERN --- */
+        th.th-gummy, .col-gummy {
+            background: 
+                radial-gradient(circle at 50% 40%, rgba(255, 255, 200, 0.7) 0%, transparent 50%),
+                linear-gradient(135deg, #ffaa00 0%, #ffcc00 40%, #ff7700 80%, #cc5500 100%);
+            background-size: 80px 80px, 200% 200%;
+        }
+
+        /* --- GALAXY PATTERN (Galaxy Variant Texture Match) --- */
+        th.th-galaxy, .col-galaxy { 
+            position: relative;
+            background: 
+                radial-gradient(1.5px 1.5px at 15% 25%, #ffffff 100%, transparent),
+                radial-gradient(2px 2px at 75% 65%, #ffffff 100%, transparent),
+                radial-gradient(1px 1px at 45% 85%, #b19cd9 100%, transparent),
+                radial-gradient(1.5px 1.5px at 85% 20%, #7df9ff 100%, transparent),
+                radial-gradient(circle at 50% 50%, rgba(123, 44, 191, 0.6) 0%, rgba(15, 5, 40, 0.9) 100%),
+                linear-gradient(135deg, #09021f 0%, #24114f 50%, #0d0426 100%);
+            background-size: 40px 40px, 60px 60px, 50px 50px, 70px 70px, 100% 100%, 100% 100%;
+        }
+
+        /* --- HOLOFOIL PATTERN (Holofoil Rainbow Shimmer Texture Match) --- */
+        th.th-holofoil, .col-holofoil { 
+            background: 
+                linear-gradient(120deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.4) 100%),
+                linear-gradient(135deg, #ff9ebb 0%, #ffdf9e 20%, #b5ff9e 40%, #9ebfff 60%, #f39eff 80%, #ff9ebb 100%); 
+            background-size: 200% 200%, 300% 300%;
+        }
+
+        /* --- CUBE PATTERN (Cube Variant Texture Match) --- */
+        th.th-cube, .col-cube { 
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(255, 100, 220, 0.5) 0%, transparent 60%),
+                repeating-linear-gradient(45deg, rgba(140, 0, 255, 0.2) 0px, rgba(140, 0, 255, 0.2) 4px, transparent 4px, transparent 10px),
+                linear-gradient(135deg, #120024 0%, #4a007a 35%, #18002e 70%, #2f004f 100%); 
+            background-size: 100% 100%, 30px 30px, 100% 100%;
+        }
+
+        /* --- GEM PATTERN --- */
+        th.th-gem, .col-gem { 
+            position: relative;
+            background: 
+                radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.7) 0%, transparent 45%),
+                radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+                linear-gradient(135deg, #ff9ebb 0%, #ffc2d1 30%, #a2e8ff 70%, #76d7ff 100%);
+            background-size: 50px 50px, 70px 70px, 200% 200%;
+        }
+
+        /* --- QUACK PATTERN --- */
+        th.th-quack, .col-quack {
+            position: relative;
+            background: 
+                linear-gradient(60deg, rgba(255,255,255,0.2) 0%, transparent 40%, rgba(255,255,255,0.3) 60%, transparent 100%),
+                linear-gradient(135deg, #70fdff 0%, #1ba8ff 30%, #0043c7 70%, #001254 100%);
+            background-size: 40px 40px, 100% 100%;
+        }
+
+        .section-header-row th { margin-top: 20px; }
+        .completed-header-bg th { background: #ffc107 !important; color: #212529 !important; text-shadow: none !important; }
+        
+        .filter-header { cursor: pointer; user-select: none; transition: opacity 0.2s ease; }
+        .filter-header:hover { opacity: 0.85; }
+        .filter-active { box-shadow: inset 0 -4px 0 rgba(255, 255, 255, 0.8); text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        .filter-active::after { content: ' 🔍'; font-size: 0.8em; }
+
+        /* --- FIXED SPRITE NAME CELL & PHOTO ZOOM --- */
+        td.sprite-name-cell { 
+            text-align: left; 
+            font-weight: bold; 
+            background-color: transparent; 
+            color: #111; 
+            width: 25%; 
+            transition: background-color 0.2s ease, color 0.2s ease; 
+            position: relative; 
+            overflow: visible;
+        }
+        td.sprite-name-cell:hover {
+            z-index: 999;
+        }
+        .sprite-name-wrapper { display: flex; align-items: center; white-space: nowrap; position: relative; z-index: 1; }
+        .sprite-name-text { font-family: 'Gemunu Libre Medium', sans-serif; letter-spacing: 1px; font-size: 1.25em; }
+        .rarity-badge { display: inline-block; width: 75px; padding: 3px 0; border-radius: 4px; margin-right: 12px; flex-shrink: 0; text-align: center; font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(0,0,0,0.3); box-shadow: inset 0 0 4px rgba(255,255,255,0.3); color: white; text-shadow: 0 2px 3px rgba(0,0,0,0.8); }
+        .rarity-Common { background-color: #8c8c8c; } .rarity-Rare { background-color: #32e6ff; } .rarity-Epic { background-color: #9b62ff; } .rarity-Legendary { background-color: #ffa12b; } .rarity-Mythic { background-color: #ffe16d; } .rarity-Iconic { background-color: #ffe16d; } 
+
+        .sprite-photo { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 4px; 
+            margin-right: 8px; 
+            object-fit: contain; 
+            flex-shrink: 0; 
+            cursor: pointer; 
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); 
+            transition: transform 0.2s ease, filter 0.2s ease; 
+            position: relative;
+            z-index: 10;
+        }
+        .sprite-photo:hover { 
+            transform: scale(2.2); 
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1)); 
+            z-index: 1000; 
+        }
+
+        .variant-hover-container { position: absolute; bottom: 110%; left: 50%; width: 260px; height: 260px; border-radius: 12px; z-index: 100; opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(-50%) translateY(10px); transition: all 0.2s ease; display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
+        .checkbox-container:hover .variant-hover-container { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+        .variant-hover-inner { width: 100%; height: 100%; border-radius: 6px; display: flex; justify-content: center; align-items: center; box-shadow: inset 0 6px 16px rgba(0,0,0,0.8), inset 0 0 8px rgba(0,0,0,0.6); position: relative; z-index: 2; background-color: #1a0000;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255, 235, 59, 0.9) 1.5px, transparent 3px),
+                radial-gradient(circle at 30% 70%, rgba(255, 152, 0, 0.9) 2px, transparent 4px),
+                radial-gradient(circle at 60% 15%, rgba(255, 193, 7, 0.8) 1.5px, transparent 3px),
+                radial-gradient(circle at 85% 80%, rgba(255, 87, 34, 0.9) 2.5px, transparent 5px),
+                radial-gradient(circle at 45% 55%, rgba(255, 235, 59, 0.8) 1px, transparent 2px),
+                radial-gradient(circle at 75% 40%, rgba(255, 152, 0, 0.9) 2px, transparent 4px),
+                linear-gradient(to top, #ffcc00 0%, #ff5500 25%, #aa1100 60%, #1a0000 100%);
+            background-size: 100px 100px, 150px 150px, 80px 80px, 200px 200px, 120px 120px, 180px 180px, 100% 100%;
+        }
+
+        .variant-hover-photo { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1.5)); }
+
+        .image-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; }
+        .image-modal img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.9); background: black; padding: 10px; }
+
+        /* --- HIGH READABILITY TEXT STYLING FOR VARIANTS --- */
+        .checkbox-cell { transition: background 0.2s ease, box-shadow 0.2s ease; width: 9%; position: relative; }
+        .checkbox-cell:hover { z-index: 999; }
+        
+        .checkbox-container { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; z-index: 2;}
+        .checkbox-row { display: flex; align-items: center; justify-content: center; width: 100%; }
+        
+        input[type="checkbox"] { margin-right: 6px; width: 18px; height: 18px; cursor: pointer; }
+        
+        /* High contrast defined variant text */
+        label { 
+            cursor: pointer; 
+            user-select: none; 
+            font-size: 0.95em; 
+            font-weight: 700; 
+            color: #ffffff; 
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.9), 
+                1px -1px 2px rgba(0,0,0,0.9), 
+                -1px 1px 2px rgba(0,0,0,0.9), 
+                1px 1px 2px rgba(0,0,0,0.9),
+                0 0 4px rgba(0,0,0,0.8); 
+        }
+
+        /* Checkbox selected (but NOT mastered yet) */
+        .checkbox-cell.checked-cell { 
+            background: rgba(0, 0, 0, 0.4) !important; 
+        }
+        .checkbox-cell.checked-cell label {
+            color: #bfffbf !important;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.9), 
+                1px -1px 2px rgba(0,0,0,0.9), 
+                -1px 1px 2px rgba(0,0,0,0.9), 
+                1px 1px 2px rgba(0,0,0,0.9),
+                0 0 6px rgba(0,255,0,0.5);
+        }
+
+        /* Fully Mastered Cell state */
+        .mastered-cell {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3) !important;
+        }
+        .mastered-cell label {
+            color: #ffffff !important;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.8), 
+                1px -1px 2px rgba(0,0,0,0.8), 
+                -1px 1px 2px rgba(0,0,0,0.8), 
+                1px 1px 2px rgba(0,0,0,0.8),
+                0 0 8px rgba(255,255,255,0.6);
+        }
+
+        .na-cell, .empty-cell {
+            background: #ffffff !important;
+            box-shadow: none !important;
+        }
+
+        td.sprite-name-cell.row-complete { background-color: #fff3cd !important; color: #856404; }
+        
+        /* --- ENHANCED MASTERY CROWN --- */
+        .mastery-crown {
+            cursor: pointer;
+            filter: grayscale(100%) brightness(0.9);
+            opacity: 0.85; 
+            font-size: 1.25em; 
+            margin-top: 6px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            line-height: 1;
+            text-shadow: 
+                0 0 3px rgba(0, 0, 0, 1),
+                0 0 6px rgba(0, 0, 0, 0.9),
+                2px 2px 4px rgba(0, 0, 0, 0.95);
+        }
+        .mastery-crown.active {
+            filter: grayscale(0%) brightness(1.25) saturate(1.5); 
+            opacity: 1;
+            transform: scale(1.35); 
+            text-shadow: 
+                0 0 5px rgba(255, 215, 0, 1), 
+                0 0 12px rgba(255, 140, 0, 0.8),
+                2px 2px 4px rgba(0, 0, 0, 0.95); 
+        }
+
+        /* --- ANIMATION STYLES: Zoom, Sparkle & Flight --- */
+        @keyframes masterySparkle {
+            0% { transform: scale(1); filter: brightness(1); }
+            30% { transform: scale(1.6); filter: brightness(1.2); box-shadow: 0 0 15px 5px rgba(255,215,0,0.6); background: rgba(255, 215, 0, 0.2); border-radius: 8px; }
+            50% { transform: scale(2.2); filter: brightness(1.4); box-shadow: 0 0 40px 20px rgba(255,215,0,1), inset 0 0 20px rgba(255,255,255,0.8); background: rgba(255, 255, 255, 0.6); border-radius: 8px; }
+            70% { transform: scale(1.6); filter: brightness(1.2); box-shadow: 0 0 15px 5px rgba(255,215,0,0.6); background: rgba(255, 215, 0, 0.2); border-radius: 8px; }
+            100% { transform: scale(1); filter: brightness(1); box-shadow: none; background: transparent; border-radius: 0; }
+        }
+
+        .mastering-anim {
+            animation: masterySparkle 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            z-index: 9999 !important;
+        }
+
+        @keyframes sparklePop {
+            0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(2) rotate(180deg); filter: drop-shadow(0 0 10px white); }
+            100% { opacity: 0; transform: scale(2.5) rotate(360deg); }
+        }
+
+        .mastering-anim::before, .mastering-anim::after {
+            content: '✨';
+            position: absolute;
+            font-size: 2.5em;
+            pointer-events: none;
+            z-index: 10000;
+            animation: sparklePop 1.5s ease-out forwards;
+        }
+
+        .mastering-anim::before { top: -20px; left: -20px; }
+        .mastering-anim::after { bottom: -20px; right: -20px; animation-delay: 0.1s; }
+
+        /* FLIP Flight Animations - Slowed down to 2 seconds */
+        .flying-clone {
+            position: fixed !important;
+            margin: 0 !important;
+            z-index: 99999 !important;
+            pointer-events: none !important;
+            transition: top 2s ease-in-out, 
+                        left 2s ease-in-out, 
+                        width 2s ease-in-out, 
+                        height 2s ease-in-out, 
+                        opacity 2s ease-in-out !important;
+        }
+        .flying-mastered {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), inset 0 0 10px rgba(0,0,0,0.3) !important;
+            border-radius: 4px; 
+        }
+        .flying-mastered label {
+            color: #ffffff !important;
+            text-shadow: -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.6) !important;
+        }
+        .flying-unmastered {
+            background: rgba(0, 0, 0, 0.4) !important; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6) !important;
+            border-radius: 4px;
+        }
+        .flying-unmastered label {
+            color: #bfffbf !important;
+            text-shadow: -1px -1px 2px rgba(0,0,0,0.9), 1px -1px 2px rgba(0,0,0,0.9), -1px 1px 2px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.9), 0 0 6px rgba(0,255,0,0.5) !important;
+        }
+
+        @keyframes flightPulse {
+            0% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.1) rotate(3deg); opacity: 1; filter: brightness(1.2); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .flight-pulse {
+            animation: flightPulse 2s ease-in-out forwards;
+        }
+
+        .reset-btn { display: block; margin: 20px auto 0 auto; background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .reset-btn:hover { background-color: #bd2130; }
+    </style>
+</head>
+<body>
+    <h1>Fortnite Sprites Checklist</h1>
+    <div class="subtitle">Progress auto-saves locally to your browser</div>
+
+    <div class="top-controls">
+        <button id="sort-toggle-btn" class="sort-btn" onclick="toggleSort()">🔤 Sort: Alphabetical</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sprite Name</th>
+                <th class="th-default filter-header" onclick="toggleFilter('default')" title="Click to filter unchecked">Default</th>
+                <th class="th-cube filter-header" onclick="toggleFilter('cube')" title="Click to filter unchecked">Cube</th>
+                <th class="th-gold filter-header" onclick="toggleFilter('gold')" title="Click to filter unchecked"><span style="position: relative; z-index: 2;">Gold</span></th>
+                <th class="th-quack filter-header" onclick="toggleFilter('quack')" title="Click to filter unchecked">Quack</th>
+                <th class="th-gummy filter-header" onclick="toggleFilter('gummy')" title="Click to filter unchecked">Gummy</th>
+                <th class="th-galaxy filter-header" onclick="toggleFilter('galaxy')" title="Click to filter unchecked"><span style="position: relative; z-index: 2;">Galaxy</span></th>
+                <th class="th-gem filter-header" onclick="toggleFilter('gem')" title="Click to filter unchecked"><span style="position: relative; z-index: 2;">Gem</span></th>
+                <th class="th-holofoil filter-header" onclick="toggleFilter('holofoil')" title="Click to filter unchecked">Holofoil</th>
+            </tr>
+        </thead>
+        <tbody id="checklist-table-body"></tbody>
+        <tbody id="completed-header" style="display: none;">
+            <tr class="section-header-row completed-header-bg">
+                <th colspan="9">Mastered Sprites</th>
+            </tr>
+        </tbody>
+        <tbody id="completed-table-body"></tbody>
+    </table>
+
+    <button class="reset-btn" onclick="clearProgress()">Clear All Progress</button>
+
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Enlarged Sprite Photo">
+    </div>
+
+    <script>
+        const sprites = [
+            { name: "Batman", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Galaxy_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Holofoil_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Cube_L.webp" } },
+            { name: "John Wick", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp" } },
+            { name: "Water", rarity: "Rare", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp", quack: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Quack_ui_L.webp" } },
+            { name: "Earth", rarity: "Rare", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Cube_ui_L.webp", quack: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Quack_ui_L.webp" } },
+            { name: "Fire", rarity: "Rare", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Cube_ui_L.webp", quack: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Quack_ui_L.webp" } },
+            { name: "Duck", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Default_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Galaxy_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gem_L.webp" } },
+            { name: "Ghost", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp" } },
+            { name: "Dream", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Cube_ui_L.webp" } },
+            { name: "Demon", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Default_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Galaxy_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gem_L.webp" } },
+            { name: "Punk", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Cube_ui_L.webp" } },
+            { name: "King", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp" } },
+            { name: "Burnt Peanut", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp" } },
+            { name: "Vini Jr.", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp" } },
+            { name: "Zero Point", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Holofoil_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Cube_ui_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp", quack: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Quack_ui_L.webp" } },
+            { name: "Fishy", rarity: "Rare", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Cube_L.webp" } },
+            { name: "Striker", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp" } },
+            { name: "Aura", rarity: "Epic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp" } },
+            { name: "Boss", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Cube_ui_L.webp" } },
+            { name: "Grim", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Galaxy_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Holofoil_L.webp", cube: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Cube_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gem_L.webp" } },
+            { name: "Air", rarity: "Rare", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Default_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Gold_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Candy_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Galaxy_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Holo_L.webp" } },
+            { name: "Seven", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp" } },
+            { name: "Ironmouse", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp" } },
+            { name: "Pollo", rarity: "Mythic", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp" } },
+            { name: "Lootin' Llama", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Galaxy_ui_L.webp", gem: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gem_ui_L.webp" } },
+            { name: "Peeky Peely", rarity: "Legendary", image: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_ui_L.webp", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_ui_L.webp", gold: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Gold_ui_L.webp", gummy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Candy_ui_L.webp", galaxy: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Galaxy_ui_L.webp", holofoil: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp" } }
+        ];
+
+        const finishes = ["Default", "Cube", "Gold", "Quack", "Gummy", "Galaxy", "Gem", "Holofoil"];
+        const tableBody = document.getElementById('checklist-table-body');
+        const completedBody = document.getElementById('completed-table-body');
+        
+        let currentSort = localStorage.getItem('spriteSortPreference') || 'default';
+        let activeFilterColumn = null; 
+
+        // Generate table rows dynamically across both tbodies
+        sprites.forEach((sprite, index) => {
+            const safeSpriteId = sprite.name.replace(/[^a-zA-Z0-9]/g, '');
+            
+            // --- Unmastered Row ---
+            const uRow = document.createElement('tr');
+            uRow.id = `unmastered-row-${index}`;
+            uRow.setAttribute('data-index', index); 
+            uRow.setAttribute('data-name', sprite.name.toLowerCase()); 
+            
+            const uNameCell = document.createElement('td');
+            uNameCell.className = 'sprite-name-cell';
+            uNameCell.innerHTML = `
+                <div class="sprite-name-wrapper">
+                    <span class="rarity-badge rarity-${sprite.rarity}">${sprite.rarity}</span>
+                    <img class="sprite-photo" src="${sprite.image}" alt="${sprite.name} Photo" onclick="openModal('${sprite.image}')" onerror="this.src='https://via.placeholder.com/40x40?text=Sprite'">
+                    <span class="sprite-name-text">${sprite.name}</span>
+                </div>
+            `;
+            uRow.appendChild(uNameCell);
+            
+            // --- Mastered Row (Bottom Table) ---
+            const mRow = document.createElement('tr');
+            mRow.id = `mastered-row-${index}`;
+            mRow.setAttribute('data-index', index); 
+            mRow.setAttribute('data-name', sprite.name.toLowerCase()); 
+            mRow.style.display = 'none'; 
+            
+            const mNameCell = document.createElement('td');
+            mNameCell.className = 'sprite-name-cell';
+            mNameCell.innerHTML = uNameCell.innerHTML; 
+            mRow.appendChild(mNameCell);
+            
+            finishes.forEach((finish) => {
+                const finishClass = finish.toLowerCase();
+                const uniqueId = `${safeSpriteId}-${finish}`;
+                
+                const uCell = document.createElement('td');
+                uCell.id = `uCell-${uniqueId}`;
+                
+                const mCell = document.createElement('td');
+                mCell.id = `mCell-${uniqueId}`;
+                
+                const hasVariant = sprite.images && sprite.images[finishClass];
+                
+                if (!hasVariant) {
+                    uCell.className = `checkbox-cell col-${finishClass} na-cell`;
+                    mCell.className = `checkbox-cell col-${finishClass} na-cell empty-cell`;
+                } else {
+                    uCell.className = `checkbox-cell col-${finishClass}`;
+                    mCell.className = `checkbox-cell col-${finishClass} empty-cell`; 
+                    
+                    const imgPath = sprite.images[finishClass];
+                    
+                    const content = document.createElement('div');
+                    content.id = `content-${uniqueId}`;
+                    content.className = 'checkbox-container';
+                    content.setAttribute('data-row-index', index);
+                    content.innerHTML = `
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="${uniqueId}" onchange="saveCheckboxProgress(this)">
+                            <label for="${uniqueId}">${finish}</label>
+                        </div>
+                        <div class="mastery-crown" id="crown-${uniqueId}" onclick="toggleCrown('${uniqueId}', this)" title="Mark as Mastered">👑</div>
+                        <div class="variant-hover-container col-${finishClass}">
+                            <div class="variant-hover-inner">
+                                <img class="variant-hover-photo" src="${imgPath}" alt="${sprite.name} ${finish}" onerror="this.src='https://via.placeholder.com/260x260?text=Sprite'">
+                            </div>
+                        </div>
+                    `;
+                    
+                    uCell.appendChild(content);
+                }
+                uRow.appendChild(uCell);
+                mRow.appendChild(mCell);
+            });
+            
+            tableBody.appendChild(uRow);
+            completedBody.appendChild(mRow);
+        });
+
+        function openModal(imageSrc) {
+            if (!imageSrc) imageSrc = 'https://via.placeholder.com/400x400?text=Sprite';
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        function toggleFilter(columnName) {
+            if (activeFilterColumn === columnName) {
+                activeFilterColumn = null;
+                document.querySelectorAll('.filter-header').forEach(th => th.classList.remove('filter-active'));
+            } else {
+                activeFilterColumn = columnName;
+                document.querySelectorAll('.filter-header').forEach(th => th.classList.remove('filter-active'));
+                document.querySelector('.th-' + columnName).classList.add('filter-active');
+            }
+            applyFilter();
+        }
+
+        function applyFilter() {
+            const uRows = Array.from(document.getElementById('checklist-table-body').children);
+            const mRows = Array.from(document.getElementById('completed-table-body').children);
+            
+            sprites.forEach((_, index) => updateRowVisibility(index));
+
+            if (activeFilterColumn) {
+                uRows.forEach(row => {
+                    if (row.style.display === 'none') return; 
+                    
+                    const cell = row.querySelector('.col-' + activeFilterColumn);
+                    const checkbox = cell ? cell.querySelector('input[type="checkbox"]') : null;
+                    
+                    if (!checkbox || checkbox.checked) {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                mRows.forEach(row => {
+                    row.style.display = 'none';
+                });
+            }
+            
+            toggleHeaders(); 
+        }
+
+        function updateSortBtnUI() {
+            const btn = document.getElementById('sort-toggle-btn');
+            if (currentSort === 'alphabetical') {
+                btn.innerHTML = '🔢 Sort: Default Order';
+                btn.classList.add('sort-active');
+            } else {
+                btn.innerHTML = '🔤 Sort: Alphabetical';
+                btn.classList.remove('sort-active');
+            }
+        }
+
+        function toggleSort() {
+            currentSort = currentSort === 'default' ? 'alphabetical' : 'default';
+            localStorage.setItem('spriteSortPreference', currentSort);
+            updateSortBtnUI();
+            sortSection(tableBody);
+            sortSection(completedBody);
+        }
+
+        function toggleCrown(uniqueId, crownElement) {
+            const content = document.getElementById(`content-${uniqueId}`);
+            
+            // Prevent clicking again while it's in the middle of animating
+            if (content && content.dataset.animating === 'true') return;
+
+            const wasActive = crownElement.classList.contains('active');
+            crownElement.classList.toggle('active');
+            const isCrownActive = crownElement.classList.contains('active');
+            
+            localStorage.setItem(crownElement.id, isCrownActive);
+
+            const checkbox = document.getElementById(uniqueId);
+            if (checkbox && isCrownActive && !checkbox.checked) {
+                checkbox.checked = true;
+                localStorage.setItem(checkbox.id, true);
+            }
+
+            if (isCrownActive && !wasActive && content) {
+                // Flash & Sparkle Zoom Phase
+                content.dataset.animating = 'true';
+                content.classList.add('mastering-anim');
+                
+                setTimeout(() => {
+                    content.classList.remove('mastering-anim');
+                    // Initiate moving down flight
+                    animateMoveToTarget(uniqueId, true);
+                }, 1500); 
+            } else if (!isCrownActive && wasActive && content) {
+                // Animate flying back up if un-mastered
+                content.dataset.animating = 'true';
+                animateMoveToTarget(uniqueId, false);
+            } else {
+                // Fallback for instant update
+                updateCellPosition(uniqueId);
+                applyFilter();
+            }
+        }
+
+        function saveCheckboxProgress(checkbox) {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+            
+            // Only implicitly un-master, but don't animate unchecking to keep UI fast
+            if (!checkbox.checked) {
+                const crown = document.getElementById(`crown-${checkbox.id}`);
+                if (crown && crown.classList.contains('active')) {
+                    crown.classList.remove('active');
+                    localStorage.setItem(crown.id, false);
+                }
+            }
+
+            updateCellPosition(checkbox.id);
+            applyFilter();
+        }
+
+        // --- FLIP Animation Logic ---
+        function animateMoveToTarget(uniqueId, isMastering) {
+            const content = document.getElementById(`content-${uniqueId}`);
+            if (!content) return;
+
+            // 1. Snapshot First Position
+            const firstRect = content.getBoundingClientRect();
+            
+            // Setup visual Clone
+            const clone = content.cloneNode(true);
+            clone.id = `clone-${uniqueId}`;
+            
+            const cb = clone.querySelector('input');
+            if (cb) {
+                cb.id = `clone-cb-${uniqueId}`;
+                cb.checked = isMastering ? true : document.getElementById(uniqueId).checked;
+            }
+            
+            const cr = clone.querySelector('.mastery-crown');
+            if (cr) {
+                cr.id = `clone-cr-${uniqueId}`;
+                if (isMastering) cr.classList.add('active');
+                else cr.classList.remove('active');
+            }
+
+            clone.classList.add('flying-clone');
+            clone.classList.add(isMastering ? 'flying-mastered' : 'flying-unmastered');
+
+            clone.style.top = `${firstRect.top}px`;
+            clone.style.left = `${firstRect.left}px`;
+            clone.style.width = `${firstRect.width}px`;
+            clone.style.height = `${firstRect.height}px`;
+
+            document.body.appendChild(clone);
+
+            // 2. Perform actual underlying DOM changes seamlessly
+            updateCellPosition(uniqueId);
+            applyFilter(); 
+            
+            // 3. Snapshot Last Position (where it needs to land)
+            const lastRect = content.getBoundingClientRect();
+            
+            // Hide actual destination cell while the clone is in flight
+            content.style.opacity = '0';
+
+            // 4. Invert & Play Animation
+            requestAnimationFrame(() => {
+                clone.offsetHeight; // Force DOM layout reflow
+                
+                // If destination is entirely hidden (e.g., filtered out view), just fade out locally
+                if (lastRect.width === 0 || lastRect.height === 0) {
+                    clone.style.opacity = '0';
+                    clone.style.transform = 'scale(0.5)';
+                } else {
+                    clone.style.top = `${lastRect.top}px`;
+                    clone.style.left = `${lastRect.left}px`;
+                    clone.style.width = `${lastRect.width}px`;
+                    clone.style.height = `${lastRect.height}px`;
+                    clone.classList.add('flight-pulse');
+                }
+
+                // Cleanup clone and restore real content visibility once transition finishes (2000ms to match CSS)
+                setTimeout(() => {
+                    clone.remove();
+                    content.style.opacity = '1';
+                    content.dataset.animating = 'false';
+                }, 2000); 
+            });
+        }
+
+        function updateCellPosition(uniqueId) {
+            const checkbox = document.getElementById(uniqueId);
+            const crown = document.getElementById(`crown-${uniqueId}`);
+            const content = document.getElementById(`content-${uniqueId}`);
+            
+            if (!checkbox || !crown || !content) return;
+
+            const isCrownActive = crown.classList.contains('active');
+            const isChecked = checkbox.checked;
+            
+            const rowIndex = content.getAttribute('data-row-index');
+            const uCell = document.getElementById(`uCell-${uniqueId}`);
+            const mCell = document.getElementById(`mCell-${uniqueId}`);
+
+            if (isCrownActive) {
+                mCell.appendChild(content);
+                mCell.classList.remove('empty-cell');
+                mCell.classList.add('mastered-cell');
+                
+                uCell.classList.add('empty-cell');
+                uCell.classList.remove('checked-cell'); 
+            } else {
+                uCell.appendChild(content);
+                uCell.classList.remove('empty-cell');
+                
+                mCell.classList.remove('mastered-cell');
+                mCell.classList.add('empty-cell');
+                
+                if (isChecked) {
+                    uCell.classList.add('checked-cell');
+                } else {
+                    uCell.classList.remove('checked-cell');
+                }
+            }
+            
+            updateRowVisibility(rowIndex);
+            checkRowMasteryStyle(rowIndex);
+        }
+
+        function updateRowVisibility(rowIndex) {
+            const uRow = document.getElementById(`unmastered-row-${rowIndex}`);
+            const mRow = document.getElementById(`mastered-row-${rowIndex}`);
+            
+            if (!uRow || !mRow) return;
+
+            const uHasContent = uRow.querySelector('.checkbox-container') !== null;
+            const mHasContent = mRow.querySelector('.checkbox-container') !== null;
+            
+            uRow.style.display = uHasContent ? '' : 'none';
+            mRow.style.display = mHasContent ? '' : 'none';
+        }
+
+        function checkRowMasteryStyle(rowIndex) {
+            const mRow = document.getElementById(`mastered-row-${rowIndex}`);
+            if (!mRow) return;
+            const nameCell = mRow.querySelector('.sprite-name-cell');
+            
+            const sprite = sprites[rowIndex];
+            let totalVariants = 0;
+            finishes.forEach(f => {
+                if (sprite.images && sprite.images[f.toLowerCase()]) totalVariants++;
+            });
+
+            const masteredCount = mRow.querySelectorAll('.checkbox-container').length;
+            if (totalVariants > 0 && masteredCount === totalVariants) {
+                nameCell.classList.add('row-complete');
+            } else {
+                nameCell.classList.remove('row-complete');
+            }
+        }
+
+        function sortSection(tbody) {
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            rows.sort((a, b) => {
+                if (currentSort === 'alphabetical') {
+                    return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+                } else {
+                    return parseInt(a.getAttribute('data-index')) - parseInt(b.getAttribute('data-index'));
+                }
+            });
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        function toggleHeaders() {
+            const completedHeader = document.getElementById('completed-header');
+            const visibleCompletedRows = Array.from(completedBody.children).some(row => row.style.display !== 'none');
+            completedHeader.style.display = visibleCompletedRows ? '' : 'none';
+        }
+
+        function loadProgress() {
+            updateSortBtnUI();
+
+            const crowns = document.querySelectorAll('.mastery-crown');
+            crowns.forEach((crown) => {
+                if (localStorage.getItem(crown.id) === 'true') {
+                    crown.classList.add('active');
+                }
+            });
+
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                updateCellPosition(checkbox.id);
+            });
+            
+            sprites.forEach((_, rowIndex) => {
+                updateRowVisibility(rowIndex);
+                checkRowMasteryStyle(rowIndex);
+            });
+            
+            sortSection(tableBody);
+            sortSection(completedBody);
+            applyFilter(); 
+        }
+
+        function clearProgress() {
+            if (confirm("Are you sure you want to clear all checked items?")) {
+                const savedSort = localStorage.getItem('spriteSortPreference');
+                localStorage.clear();
+                if (savedSort) localStorage.setItem('spriteSortPreference', savedSort);
+                
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => {
+                    cb.checked = false;
+                });
+                
+                const crowns = document.querySelectorAll('.mastery-crown');
+                crowns.forEach(crown => {
+                    crown.classList.remove('active');
+                });
+                
+                checkboxes.forEach(cb => {
+                    updateCellPosition(cb.id);
+                });
+                
+                sprites.forEach((_, rowIndex) => {
+                    updateRowVisibility(rowIndex);
+                    checkRowMasteryStyle(rowIndex);
+                });
+                
+                applyFilter();
+            }
+        }
+
+        window.onload = loadProgress;
+    </script>
+</body>
+</html>

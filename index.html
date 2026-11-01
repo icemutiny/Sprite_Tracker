@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Sprites Checklist</title>
+    <style>
+    @import url('https://fonts.cdnfonts.com/css/gemunu-libre');
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Gemunu Libre Medium", Roboto, Helvetica, Arial, sans-serif; font-size: 1.25em;
+            background-color: #f4f4f9;
+            color: #333;
+            max-width: 1200px; 
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #111;
+            margin-bottom: 5px;
+        }
+        .chaptertitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.85em;
+        }
+        .top-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .sort-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+        }
+        .sort-btn:hover { background-color: #5a6268; }
+        .sort-btn.sort-active { background-color: #17a2b8; }
+        .sort-btn.sort-active:hover { background-color: #138496; }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+        thead tr {
+            box-shadow: none !important;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+            font-weight: bold;
+            font-size: 0.95em;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.5), 
+                1px -1px 2px rgba(0,0,0,0.5), 
+                -1px 1px 2px rgba(0,0,0,0.5), 
+                1px 1px 2px rgba(0,0,0,0.5),
+                0 0 4px rgba(0,0,0,0.8);
+        }
+        
+        th.th-default, td.col-default:not(.na-cell):not(.empty-cell) { 
+            background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), #46165d; 
+        }
+        th.th-fortune, td.col-fortune:not(.na-cell):not(.empty-cell) { 
+            background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), url('https://fortnite.gg/img/x/sprites/rarities/jeweled.webp');
+            background-size: cover; background-position: center; border: 1px solid #b87c00;
+        }
+        th.th-cursed, td.col-cursed:not(.na-cell):not(.empty-cell) {
+            background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), url('https://fortnite.gg/img/x/sprites/rarities/cursed.webp');
+            background-size: cover; background-position: center; border: 1px solid #330044;
+        }
+
+        .section-header-row th { margin-top: 20px; }
+        .completed-header-bg th { background: #ffc107 !important; color: #212529 !important; text-shadow: none !important; }
+        
+        .filter-header { cursor: pointer; user-select: none; transition: opacity 0.2s ease; }
+        .filter-header:hover { opacity: 0.85; }
+        .filter-active { box-shadow: inset 0 -4px 0 rgba(255, 255, 255, 0.8); text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        .filter-active::after { content: ' 🔍'; font-size: 0.8em; }
+
+        .card-spacer td, .card-spacer th {
+            height: 16px;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        tr.main-sprite-row td:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px !important; }
+        tr.main-sprite-row td:last-child { border-top-right-radius: 8px; border-bottom-right-radius: 8px !important; }
+        tr.main-sprite-row td {
+            box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid #ddd !important;
+        }
+
+        td.sprite-name-cell { 
+            text-align: left; 
+            font-weight: bold; 
+            background-color: transparent; 
+            color: #111; 
+            width: 34%; 
+            position: relative; 
+            overflow: visible;
+        }
+        td.sprite-name-cell:hover {
+            z-index: 999;
+        }
+        .sprite-name-wrapper { display: flex; align-items: center; white-space: nowrap; position: relative; z-index: 10; }
+        .sprite-name-text { font-family: 'Gemunu Libre Medium', sans-serif; letter-spacing: 1px; font-size: 1.25em; }
+        .rarity-badge { display: inline-block; width: 75px; padding: 3px 0; border-radius: 4px; margin-right: 12px; flex-shrink: 0; text-align: center; font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(0,0,0,0.3); box-shadow: inset 0 0 4px rgba(255,255,255,0.3); color: white; text-shadow: 0 2px 3px rgba(0,0,0,0.8); }
+        .rarity-Common { background-color: #8c8c8c; } .rarity-Rare { background-color: #32e6ff; } .rarity-Epic { background-color: #9b62ff; } .rarity-Legendary { background-color: #ffa12b; } .rarity-Mythic { background-color: #ffe16d; } .rarity-Iconic { background-color: #ffe16d; } 
+
+        .sprite-photo { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 4px; 
+            margin-right: 8px;
+            object-fit: contain; 
+            flex-shrink: 0;
+            cursor: pointer; 
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); 
+            transition: transform 0.2s ease, filter 0.2s ease; 
+            position: relative;
+            z-index: 10;
+        }
+        .sprite-photo:hover { 
+            transform: scale(2.5);
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1)); 
+            z-index: 1000;
+        }
+
+        .variant-hover-container { 
+            position: absolute; bottom: 110%; left: 50%; width: 260px; height: 260px; border-radius: 12px; 
+            z-index: 100; opacity: 0; visibility: hidden; pointer-events: none; 
+            transform: translateX(-50%) translateY(10px); transition: all 0.2s ease; 
+            display: flex; justify-content: center; align-items: center; 
+            padding: 10px;
+            background-color: #000;
+            box-sizing: border-box; box-shadow: 0 10px 25px rgba(0,0,0,0.8); 
+            overflow: hidden;
+        }
+        .checkbox-container:hover .variant-hover-container { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+        .variant-hover-inner { 
+            width: 100%; height: 100%; border-radius: 6px; display: flex; justify-content: center; align-items: center; 
+            box-shadow: inset 0 6px 16px rgba(0,0,0,0.8), inset 0 0 8px rgba(0,0,0,0.6); 
+            position: relative; z-index: 2; overflow: hidden; 
+        }
+
+        .variant-hover-container.col-default .variant-hover-inner { background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), #46165d; }
+        .variant-hover-container.col-fortune .variant-hover-inner { background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), url('https://fortnite.gg/img/x/sprites/rarities/jeweled.webp'); background-size: cover; background-position: center; }
+        .variant-hover-container.col-cursed .variant-hover-inner { background: linear-gradient(to bottom right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%), url('https://fortnite.gg/img/x/sprites/rarities/cursed.webp'); background-size: cover; background-position: center; }
+
+        .variant-hover-photo { position: relative; z-index: 5; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1.5)); }
+
+        .image-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; }
+        .image-modal img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.9); background: black; padding: 10px; }
+
+        .checkbox-cell { transition: background 0.2s ease, box-shadow 0.2s ease; width: 22%; position: relative; }
+        .checkbox-cell:hover { z-index: 999; }
+        
+        .checkbox-container { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; z-index: 3;}
+        
+        .checkbox-row { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 100%; 
+            background-color: rgba(0,0,0,0.6); 
+            padding: 2px 6px; 
+            border-radius: 4px;
+            position: relative; 
+            z-index: 10;
+        }
+        
+        input[type="checkbox"] { margin-right: 6px; width: 18px; height: 18px; cursor: pointer; }
+        
+        label { 
+            cursor: pointer; 
+            user-select: none; 
+            font-size: 0.90em; 
+            font-weight: 700; 
+            color: #ffffff; 
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.9), 
+                1px -1px 2px rgba(0,0,0,0.9), 
+                -1px 1px 2px rgba(0,0,0,0.9), 
+                1px 1px 2px rgba(0,0,0,0.9),
+                0 0 4px rgba(0,0,0,0.8); 
+        }
+
+        .checkbox-cell.checked-cell { 
+            box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.3), inset 0 0 0 1000px rgba(0, 0, 0, 0.60) !important; 
+        }
+        .checkbox-cell.checked-cell label {
+            color: #bfffbf !important;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.9), 
+                1px -1px 2px rgba(0,0,0,0.9), 
+                -1px 1px 2px rgba(0,0,0,0.9), 
+                1px 1px 2px rgba(0,0,0,0.9),
+                0 0 6px rgba(0,255,0,0.5);
+        }
+
+        .mastered-cell {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+            box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0,0,0,0.3) !important;
+        }
+        .mastered-cell label {
+            color: #ffffff !important;
+            text-shadow: 
+                -1px -1px 2px rgba(0,0,0,0.8), 
+                1px -1px 2px rgba(0,0,0,0.8), 
+                -1px 1px 2px rgba(0,0,0,0.8), 
+                1px 1px 2px rgba(0,0,0,0.8),
+                0 0 8px rgba(255,255,255,0.6);
+        }
+
+        .na-cell, .empty-cell {
+            background: #ffffff !important;
+            box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        td.sprite-name-cell.row-complete { background-color: #fff3cd !important; color: #856404; }
+        
+        .mastery-crown {
+            cursor: pointer;
+            filter: grayscale(100%) brightness(1.5);
+            opacity: 0.85; 
+            font-size: 1.25em; 
+            margin-top: 6px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            line-height: 1;
+            text-shadow: 
+                -1px -1px 1px #000, 
+                 1px -1px 1px #000, 
+                -1px 1px 1px #000, 
+                 1px 1px 1px #000, 
+                 0 3px 6px rgba(0,0,0,0.9), 
+                 0 0 12px rgba(0,0,0,1);
+            position: relative; 
+            z-index: 10;
+        }
+        .mastery-crown.active {
+            filter: grayscale(0%) brightness(1.25) saturate(1.5); 
+            opacity: 1;
+            transform: scale(1.35); 
+            text-shadow: 
+                0 0 5px rgba(255, 215, 0, 1), 
+                0 0 12px rgba(255, 140, 0, 0.8),
+                2px 2px 4px rgba(0, 0, 0, 0.95); 
+        }
+
+        @keyframes masterySparkle {
+            0% { transform: scale(1); filter: brightness(1); }
+            30% { transform: scale(1.6); filter: brightness(1.2); box-shadow: 0 0 15px 5px rgba(255,215,0,0.6); background: rgba(255, 215, 0, 0.2); border-radius: 8px; }
+            50% { transform: scale(2.2); filter: brightness(1.4); box-shadow: 0 0 40px 20px rgba(255,215,0,1), inset 0 0 20px rgba(255,255,255,0.8); background: rgba(255, 255, 255, 0.6); border-radius: 8px; }
+            70% { transform: scale(1.6); filter: brightness(1.2); box-shadow: 0 0 15px 5px rgba(255,215,0,0.6); background: rgba(255, 215, 0, 0.2); border-radius: 8px; }
+            100% { transform: scale(1); filter: brightness(1); box-shadow: none; background: transparent; border-radius: 0; }
+        }
+
+        .mastering-anim {
+            animation: masterySparkle 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            z-index: 9999 !important;
+        }
+
+        @keyframes sparklePop {
+            0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(2) rotate(180deg); filter: drop-shadow(0 0 10px white); }
+            100% { opacity: 0; transform: scale(2.5) rotate(360deg); }
+        }
+
+        .mastering-anim::before, .mastering-anim::after {
+            content: '✨';
+            position: absolute;
+            font-size: 2.5em;
+            pointer-events: none;
+            z-index: 10000;
+            animation: sparklePop 1.5s ease-out forwards;
+        }
+
+        .mastering-anim::before { top: -20px; left: -20px; }
+        .mastering-anim::after { bottom: -20px; right: -20px; animation-delay: 0.1s; }
+
+        .flying-clone {
+            position: fixed !important;
+            margin: 0 !important;
+            z-index: 99999 !important;
+            pointer-events: none !important;
+            transition: top 2s ease-in-out, 
+                        left 2s ease-in-out, 
+                        width 2s ease-in-out, 
+                        height 2s ease-in-out, 
+                        opacity 2s ease-in-out !important;
+        }
+        .flying-mastered {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6), inset 0 0 10px rgba(0,0,0,0.3) !important;
+            border-radius: 4px; 
+        }
+        .flying-mastered label {
+            color: #ffffff !important;
+            text-shadow: -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.6) !important;
+        }
+        .flying-unmastered {
+            background: rgba(0, 0, 0, 0.4) !important; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6) !important;
+            border-radius: 4px;
+        }
+        .flying-unmastered label {
+            color: #bfffbf !important;
+            text-shadow: -1px -1px 2px rgba(0,0,0,0.9), 1px -1px 2px rgba(0,0,0,0.9), -1px 1px 2px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.9), 0 0 6px rgba(0,255,0,0.5) !important;
+        }
+
+        @keyframes flightPulse {
+            0% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.1) rotate(3deg); opacity: 1; filter: brightness(1.2); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .flight-pulse {
+            animation: flightPulse 2s ease-in-out forwards;
+        }
+
+        .reset-btn { display: block; margin: 20px auto 0 auto; background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .reset-btn:hover { background-color: #bd2130; }
+    </style>
+</head>
+<body>
+    <h1>Fortnite Sprites Checklist</h1>
+    <div class="chaptertitle">Chapter 7: Mini Season</div>
+    <div class="subtitle">Progress auto-saves locally to your browser</div>
+
+    <div class="top-controls">
+        <button id="sort-toggle-btn" class="sort-btn" onclick="toggleSort()">🔤 Sort: Alphabetical</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sprite Name</th>
+                <th class="th-default filter-header" onclick="toggleFilter('default')" title="Click to filter unchecked">Default</th>
+                <th class="th-fortune filter-header" onclick="toggleFilter('fortune')" title="Click to filter unchecked">Fortune</th>
+                <th class="th-cursed filter-header" onclick="toggleFilter('cursed')" title="Click to filter unchecked">Cursed</th>
+            </tr>
+            <tr class="card-spacer"><td colspan="4"></td></tr>
+        </thead>
+        <tbody id="checklist-table-body"></tbody>
+        <tbody id="completed-header" style="display: none;">
+            <tr class="card-spacer"><td colspan="4"></td></tr>
+            <tr class="section-header-row completed-header-bg">
+                <th colspan="4">Mastered Sprites</th>
+            </tr>
+            <tr class="card-spacer"><td colspan="4"></td></tr>
+        </tbody>
+        <tbody id="completed-table-body"></tbody>
+    </table>
+
+    <button class="reset-btn" onclick="clearProgress()">Clear All Progress</button>
+
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Enlarged Sprite Photo">
+    </div>
+
+    <script>
+        const sprites = [
+            { name: "Halfpeel'd", rarity: "Rare", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PeelyBones_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PeelyBones_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PeelyBones_Cursed_L.webp" } },
+            { name: "Re-Pete", rarity: "Rare", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Parrot_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Parrot_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Parrot_Cursed_L.webp" } },
+            { name: "Barry O'Fish", rarity: "Rare", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BarrelOfFish_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BarrelOfFish_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BarrelOfFish_Cursed_L.webp" } },
+            { name: "Chester", rarity: "Epic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureChest_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureChest_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureChest_Cursed_L.webp" } },
+            { name: "Exmarks", rarity: "Epic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureMap_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureMap_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_TreasureMap_Cursed_L.webp" } },
+            { name: "Wayfinder", rarity: "Rare", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Compass_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Compass_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Compass_Cursed_L.webp" } },
+            { name: "Kelper", rarity: "Epic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_UnbotheredFish_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_UnbotheredFish_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_UnbotheredFish_Cursed_L.webp" } },
+            { name: "Sweet Dreams", rarity: "Mythic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_StarLight_L.webp" } },
+            { name: "Lil' Squibbly", rarity: "Epic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_SquibblySprite_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_SquibblySprite_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_SquibblySprite_Cursed_L.webp" } },
+            { name: "Lil' Flacko", rarity: "Epic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PlaymakerBrewery_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PlaymakerBrewery_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_PlaymakerBrewery_Cursed_L.webp" } },
+            { name: "Plundarrgh", rarity: "Mythic", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_CoinPile_L.webp", fortune: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_CoinPile_Jeweled_L.webp", cursed: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_CoinPile_Cursed_L.webp" } },
+            { name: "Transponder Snail", rarity: "Legendary", images: { default: "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_FeedJet_L.webp" } }
+        ];
+
+        const finishes = ["Default", "Fortune", "Cursed"];
+        const tableBody = document.getElementById('checklist-table-body');
+        const completedBody = document.getElementById('completed-table-body');
+        
+        let currentSort = localStorage.getItem('spriteSortPreference') || 'default';
+        let activeFilterColumn = null; 
+
+        sprites.forEach((sprite, index) => {
+            const safeSpriteId = sprite.name.replace(/[^a-zA-Z0-9]/g, '');
+            const defaultImage = (sprite.images && sprite.images.default) || '';
+            
+            const uRow = document.createElement('tr');
+            uRow.id = `unmastered-row-${index}`;
+            uRow.className = 'main-sprite-row';
+            uRow.setAttribute('data-index', index); 
+            uRow.setAttribute('data-name', sprite.name.toLowerCase()); 
+            
+            const uNameCell = document.createElement('td');
+            uNameCell.className = 'sprite-name-cell';
+            uNameCell.innerHTML = `
+                <div class="sprite-name-wrapper">
+                    <span class="rarity-badge rarity-${sprite.rarity}">${sprite.rarity}</span>
+                    <img class="sprite-photo" src="${defaultImage}" alt="${sprite.name} Photo" onclick="openModal('${defaultImage}')" onerror="this.src='https://via.placeholder.com/40x40?text=Sprite'">
+                    <span class="sprite-name-text">${sprite.name}</span>
+                </div>
+            `;
+            uRow.appendChild(uNameCell);
+            
+            const mRow = document.createElement('tr');
+            mRow.id = `mastered-row-${index}`;
+            mRow.className = 'main-sprite-row';
+            mRow.setAttribute('data-index', index); 
+            mRow.setAttribute('data-name', sprite.name.toLowerCase()); 
+            mRow.style.display = 'none'; 
+            
+            const mNameCell = document.createElement('td');
+            mNameCell.className = 'sprite-name-cell';
+            mNameCell.innerHTML = uNameCell.innerHTML; 
+            mRow.appendChild(mNameCell);
+            
+            finishes.forEach((finish) => {
+                const finishClass = finish.toLowerCase(); 
+                let finishDisplayName = finish;
+
+                const uniqueId = `${safeSpriteId}-${finish}`;
+                
+                const uCell = document.createElement('td');
+                uCell.id = `uCell-${uniqueId}`;
+                
+                const mCell = document.createElement('td');
+                mCell.id = `mCell-${uniqueId}`;
+                
+                const hasVariant = sprite.images && (sprite.images[finishClass] !== undefined);
+                
+                if (!hasVariant) {
+                    uCell.className = `checkbox-cell col-${finishClass} na-cell`;
+                    mCell.className = `checkbox-cell col-${finishClass} na-cell empty-cell`;
+                } else {
+                    uCell.className = `checkbox-cell col-${finishClass}`;
+                    mCell.className = `checkbox-cell col-${finishClass} empty-cell`; 
+                    
+                    const imgPath = sprite.images[finishClass];
+                    
+                    const content = document.createElement('div');
+                    content.id = `content-${uniqueId}`;
+                    content.className = 'checkbox-container';
+                    content.setAttribute('data-row-index', index);
+                    content.innerHTML = `
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="${uniqueId}" onchange="saveCheckboxProgress(this)">
+                            <label for="${uniqueId}">${finishDisplayName}</label>
+                        </div>
+                        <div class="mastery-crown" id="crown-${uniqueId}" onclick="toggleCrown('${uniqueId}', this)" title="Mark as Mastered">👑</div>
+                        <div class="variant-hover-container col-${finishClass}">
+                            <div class="variant-hover-inner">
+                                <img class="variant-hover-photo" src="${imgPath}" alt="${sprite.name} ${finishDisplayName}" onerror="this.src='https://via.placeholder.com/260x260?text=Sprite'">
+                            </div>
+                        </div>
+                    `;
+                    
+                    uCell.appendChild(content);
+                }
+                uRow.appendChild(uCell);
+                mRow.appendChild(mCell);
+            });
+            
+            tableBody.appendChild(uRow);
+            const uSpacer = document.createElement('tr');
+            uSpacer.id = `u-spacer-row-${index}`;
+            uSpacer.className = 'card-spacer';
+            uSpacer.innerHTML = `<td colspan="4"></td>`;
+            tableBody.appendChild(uSpacer);
+
+            completedBody.appendChild(mRow);
+            const mSpacer = document.createElement('tr');
+            mSpacer.id = `m-spacer-row-${index}`;
+            mSpacer.className = 'card-spacer';
+            mSpacer.innerHTML = `<td colspan="4"></td>`;
+            completedBody.appendChild(mSpacer);
+        });
+
+        function openModal(imageSrc) {
+            if (!imageSrc) imageSrc = 'https://via.placeholder.com/400x400?text=Sprite';
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        function toggleFilter(columnName) {
+            if (activeFilterColumn === columnName) {
+                activeFilterColumn = null;
+                document.querySelectorAll('.filter-header').forEach(th => th.classList.remove('filter-active'));
+            } else {
+                activeFilterColumn = columnName;
+                document.querySelectorAll('.filter-header').forEach(th => th.classList.remove('filter-active'));
+                document.querySelector('.th-' + columnName).classList.add('filter-active');
+            }
+            applyFilter();
+        }
+
+        function applyFilter() {
+            const uRows = Array.from(document.getElementById('checklist-table-body').querySelectorAll('tr.main-sprite-row'));
+            const mRows = Array.from(document.getElementById('completed-table-body').querySelectorAll('tr.main-sprite-row'));
+            
+            sprites.forEach((_, index) => updateRowVisibility(index));
+
+            if (activeFilterColumn) {
+                uRows.forEach(row => {
+                    if (row.style.display === 'none') return; 
+                    
+                    const cell = row.querySelector('.col-' + activeFilterColumn);
+                    const checkbox = cell ? cell.querySelector('input[type="checkbox"]') : null;
+                    
+                    if (!checkbox || checkbox.checked) {
+                        row.style.display = 'none';
+                        const index = row.getAttribute('data-index');
+                        const uSpacer = document.getElementById(`u-spacer-row-${index}`);
+                        if (uSpacer) uSpacer.style.display = 'none';
+                    }
+                });
+                
+                mRows.forEach(row => {
+                    row.style.display = 'none';
+                    const index = row.getAttribute('data-index');
+                    const mSpacer = document.getElementById(`m-spacer-row-${index}`);
+                    if (mSpacer) mSpacer.style.display = 'none';
+                });
+            }
+            
+            toggleHeaders(); 
+        }
+
+        function updateSortBtnUI() {
+            const btn = document.getElementById('sort-toggle-btn');
+            if (currentSort === 'alphabetical') {
+                btn.innerHTML = '🔢 Sort: Default Order';
+                btn.classList.add('sort-active');
+            } else {
+                btn.innerHTML = '🔤 Sort: Alphabetical';
+                btn.classList.remove('sort-active');
+            }
+        }
+
+        function toggleSort() {
+            currentSort = currentSort === 'default' ? 'alphabetical' : 'default';
+            localStorage.setItem('spriteSortPreference', currentSort);
+            updateSortBtnUI();
+            sortSection(tableBody);
+            sortSection(completedBody);
+        }
+
+        function toggleCrown(uniqueId, crownElement) {
+            const content = document.getElementById(`content-${uniqueId}`);
+            if (content && content.dataset.animating === 'true') return;
+
+            const wasActive = crownElement.classList.contains('active');
+            crownElement.classList.toggle('active');
+            const isCrownActive = crownElement.classList.contains('active');
+            
+            localStorage.setItem(crownElement.id, isCrownActive);
+
+            const checkbox = document.getElementById(uniqueId);
+            if (checkbox && isCrownActive && !checkbox.checked) {
+                checkbox.checked = true;
+                localStorage.setItem(checkbox.id, true);
+            }
+
+            if (isCrownActive && !wasActive && content) {
+                content.dataset.animating = 'true';
+                content.classList.add('mastering-anim');
+                
+                setTimeout(() => {
+                    content.classList.remove('mastering-anim');
+                    animateMoveToTarget(uniqueId, true);
+                }, 1500); 
+            } else if (!isCrownActive && wasActive && content) {
+                content.dataset.animating = 'true';
+                animateMoveToTarget(uniqueId, false);
+            } else {
+                updateCellPosition(uniqueId);
+                applyFilter();
+            }
+        }
+
+        function saveCheckboxProgress(checkbox) {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+            
+            if (!checkbox.checked) {
+                const crown = document.getElementById(`crown-${checkbox.id}`);
+                if (crown && crown.classList.contains('active')) {
+                    crown.classList.remove('active');
+                    localStorage.setItem(crown.id, false);
+                }
+            }
+
+            updateCellPosition(checkbox.id);
+            applyFilter();
+        }
+
+        function animateMoveToTarget(uniqueId, isMastering) {
+            const content = document.getElementById(`content-${uniqueId}`);
+            if (!content) return;
+
+            const firstRect = content.getBoundingClientRect();
+            const clone = content.cloneNode(true);
+            clone.id = `clone-${uniqueId}`;
+            
+            const cb = clone.querySelector('input');
+            if (cb) {
+                cb.id = `clone-cb-${uniqueId}`;
+                cb.checked = isMastering ? true : document.getElementById(uniqueId).checked;
+            }
+            
+            const cr = clone.querySelector('.mastery-crown');
+            if (cr) {
+                cr.id = `clone-cr-${uniqueId}`;
+                if (isMastering) cr.classList.add('active');
+                else cr.classList.remove('active');
+            }
+
+            clone.classList.add('flying-clone');
+            clone.classList.add(isMastering ? 'flying-mastered' : 'flying-unmastered');
+
+            clone.style.top = `${firstRect.top}px`;
+            clone.style.left = `${firstRect.left}px`;
+            clone.style.width = `${firstRect.width}px`;
+            clone.style.height = `${firstRect.height}px`;
+
+            document.body.appendChild(clone);
+
+            updateCellPosition(uniqueId);
+            applyFilter(); 
+            
+            const lastRect = content.getBoundingClientRect();
+            content.style.opacity = '0';
+
+            requestAnimationFrame(() => {
+                clone.offsetHeight; 
+                
+                if (lastRect.width === 0 || lastRect.height === 0) {
+                    clone.style.opacity = '0';
+                    clone.style.transform = 'scale(0.5)';
+                } else {
+                    clone.style.top = `${lastRect.top}px`;
+                    clone.style.left = `${lastRect.left}px`;
+                    clone.style.width = `${lastRect.width}px`;
+                    clone.style.height = `${lastRect.height}px`;
+                    clone.classList.add('flight-pulse');
+                }
+
+                setTimeout(() => {
+                    clone.remove();
+                    content.style.opacity = '1';
+                    content.dataset.animating = 'false';
+                }, 2000); 
+            });
+        }
+
+        function updateCellPosition(uniqueId) {
+            const checkbox = document.getElementById(uniqueId);
+            const crown = document.getElementById(`crown-${uniqueId}`);
+            const content = document.getElementById(`content-${uniqueId}`);
+            
+            if (!checkbox || !crown || !content) return;
+
+            const isCrownActive = crown.classList.contains('active');
+            const isChecked = checkbox.checked;
+            
+            const rowIndex = content.getAttribute('data-row-index');
+            const uCell = document.getElementById(`uCell-${uniqueId}`);
+            const mCell = document.getElementById(`mCell-${uniqueId}`);
+
+            if (isCrownActive) {
+                mCell.appendChild(content);
+                mCell.classList.remove('empty-cell');
+                mCell.classList.add('mastered-cell');
+                
+                uCell.classList.add('empty-cell');
+                uCell.classList.remove('checked-cell'); 
+            } else {
+                uCell.appendChild(content);
+                uCell.classList.remove('empty-cell');
+                
+                mCell.classList.remove('mastered-cell');
+                mCell.classList.add('empty-cell');
+                
+                if (isChecked) {
+                    uCell.classList.add('checked-cell');
+                } else {
+                    uCell.classList.remove('checked-cell');
+                }
+            }
+            
+            updateRowVisibility(rowIndex);
+            checkRowMasteryStyle(rowIndex);
+        }
+
+        function updateRowVisibility(rowIndex) {
+            const uRow = document.getElementById(`unmastered-row-${rowIndex}`);
+            const mRow = document.getElementById(`mastered-row-${rowIndex}`);
+            const uSpacer = document.getElementById(`u-spacer-row-${rowIndex}`);
+            const mSpacer = document.getElementById(`m-spacer-row-${rowIndex}`);
+            
+            if (!uRow || !mRow) return;
+
+            const uHasContent = uRow.querySelector('.checkbox-container') !== null;
+            const mHasContent = mRow.querySelector('.checkbox-container') !== null;
+            
+            uRow.style.display = uHasContent ? '' : 'none';
+            mRow.style.display = mHasContent ? '' : 'none';
+            
+            if (uSpacer) uSpacer.style.display = uHasContent ? '' : 'none';
+            if (mSpacer) mSpacer.style.display = mHasContent ? '' : 'none';
+        }
+
+        function checkRowMasteryStyle(rowIndex) {
+            const mRow = document.getElementById(`mastered-row-${rowIndex}`);
+            if (!mRow) return;
+            const nameCell = mRow.querySelector('.sprite-name-cell');
+            
+            const sprite = sprites[rowIndex];
+            let totalVariants = 0;
+            finishes.forEach(f => {
+                if (sprite.images && (sprite.images[f.toLowerCase()] !== undefined)) totalVariants++;
+            });
+
+            const masteredCount = mRow.querySelectorAll('.checkbox-container').length;
+            if (totalVariants > 0 && masteredCount === totalVariants) {
+                nameCell.classList.add('row-complete');
+            } else {
+                nameCell.classList.remove('row-complete');
+            }
+        }
+
+        function sortSection(tbody) {
+            const rows = Array.from(tbody.querySelectorAll('tr.main-sprite-row'));
+            rows.sort((a, b) => {
+                if (currentSort === 'alphabetical') {
+                    return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+                } else {
+                    return parseInt(a.getAttribute('data-index')) - parseInt(b.getAttribute('data-index'));
+                }
+            });
+            rows.forEach(row => {
+                tbody.appendChild(row);
+                const index = row.getAttribute('data-index');
+                const isCompleted = tbody.id === 'completed-table-body';
+                const spacer = document.getElementById(isCompleted ? `m-spacer-row-${index}` : `u-spacer-row-${index}`);
+                if (spacer) tbody.appendChild(spacer);
+            });
+        }
+
+        function toggleHeaders() {
+            const completedHeader = document.getElementById('completed-header');
+            const visibleCompletedRows = Array.from(completedBody.querySelectorAll('tr.main-sprite-row')).some(row => row.style.display !== 'none');
+            completedHeader.style.display = visibleCompletedRows ? '' : 'none';
+        }
+
+        function loadProgress() {
+            updateSortBtnUI();
+
+            const crowns = document.querySelectorAll('.mastery-crown');
+            crowns.forEach((crown) => {
+                if (localStorage.getItem(crown.id) === 'true') {
+                    crown.classList.add('active');
+                }
+            });
+
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                updateCellPosition(checkbox.id);
+            });
+            
+            sprites.forEach((_, rowIndex) => {
+                updateRowVisibility(rowIndex);
+                checkRowMasteryStyle(rowIndex);
+            });
+            
+            sortSection(tableBody);
+            sortSection(completedBody);
+            applyFilter(); 
+        }
+
+        function clearProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const savedSort = localStorage.getItem('spriteSortPreference');
+            localStorage.clear();
+            if (savedSort) localStorage.setItem('spriteSortPreference', savedSort);
+            
+            checkboxes.forEach(cb => {
+                cb.checked = false;
+            });
+            
+            const crowns = document.querySelectorAll('.mastery-crown');
+            crowns.forEach(crown => {
+                crown.classList.remove('active');
+            });
+            
+            checkboxes.forEach(cb => {
+                updateCellPosition(cb.id);
+            });
+            
+            sprites.forEach((_, rowIndex) => {
+                updateRowVisibility(rowIndex);
+                checkRowMasteryStyle(rowIndex);
+            });
+            
+            applyFilter();
+        }
+
+        window.onload = loadProgress;
+    </script>
+</body>
+</html>
